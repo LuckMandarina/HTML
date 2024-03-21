@@ -1,38 +1,84 @@
-document.querySelector('#header').innerHTML = "estoy leyendo el documento switch"
-var fruta
-var mensaje 
-var userImput = prompt("Ingrese el sabor de su fruta")
+document.querySelector('#header').innerHTML = "estoy leyendo el documento switch";
+var dia;
+var mensaje; 
+var userImput = prompt("Ingrese el numero del dia de la semana");
 
-  function JugoDeFresas() {
+
+  function Lunes() {
     document.querySelector ('#header').innerHTML = mensaje;
     document.querySelector ('#header').style.color = "red";
 }
 
-  function JugoDeNaranja() {
-    mensaje = "batir narajas y mandarinas"
+  function Martes() {
     document.querySelector('#header').innerHTML = mensaje;
     document.querySelector ('#header').style.color = "red";
   }
   
-  function servir_vaso_con_agua() {
-    mensaje= "Sirveme un vaso con agua"
+  function Miercoles() {
+    document.querySelector('#header').innerHTML = mensaje;
+    document.querySelector('#header').style.color = "red"
+  }
+  
+  function Jueves() {
+    document.querySelector('#header').innerHTML = mensaje;
+    document.querySelector('#header').style.color = "red"
+  }
+  
+  function Viernes() {
+    document.querySelector('#header').innerHTML = mensaje;
+    document.querySelector('#header').style.color = "red"
+  }
+
+  function Sabado() {
     document.querySelector('#header').innerHTML = mensaje;
     document.querySelector('#header').style.color = "red"
   }
   
 
-fruta = userImput.toLowerCase()
-switch(fruta) {
-    case "fresa":
-        mensaje= "batir fresas"
-        JugoDeFresas()
+  function Domingo() {
+    document.querySelector('#header').innerHTML = mensaje;
+    document.querySelector('#header').style.color = "red"
+  }
+  
+dia = parseInt(userImput)
+
+switch(dia) {
+    case 1:
+        mensaje= "Odio los lunes"
+        Lunes()
     break
     
-    case "naranja":
-    case "mandarina":
-        JugoDeNaranja()
+    case 2:
+       mensaje= "Martes"
+       Martes()
+       break
+
+    case 3:
+        mensaje = "ya es miercoles"
+        Miercoles()
     break
+
+    case 4:
+        mensaje= "ya es jueves"
+        Jueves()
+    break
+
+    case 5:
+      mensaje = "no se"
+      Viernes()
+    break
+
+    case 6: 
+    mensaje= "vacaciones"
+    Sabado()
+    break 
+
+    case 7:
+      mensaje= "Tristemente domingo"
+      Domingo()
+    break 
+    
     default:
-        servir_vaso_con_agua()
+       mensaje = "Solo 7 dias baboso"
     break
 } 
