@@ -1,4 +1,4 @@
-document.querySelector('#header').innerHTML = "estoy leyendo el documento switch";
+
 var dia;
 var mensaje; 
 var userImput = prompt("Ingrese el numero del dia de la semana");
