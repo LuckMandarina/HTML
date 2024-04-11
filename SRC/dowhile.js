@@ -1,4 +1,4 @@
-document.querySelector('#header').innerHTML = "estoy leyendo el documento do while";
+
 
 var inicio=true
 var respuesta = prompt("1. suma\n2 para resta\n3 para multiplicar\n4 para dividir\n5 para Cerrar")
@@ -48,7 +48,7 @@ do {
             case 5:
                 
                 inicio = false
-                
+
                 break
 
             default:

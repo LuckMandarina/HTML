@@ -8,7 +8,7 @@ console.log(cesta.length)
 cesta.push("mandarina")//agrega un elemento 
 console.log(cesta)
 
-cesta.pop(cesta) //elimina ultimo elemnto del array
+cesta.pop() //elimina ultimo elemnto del array
 console.log(cesta)
 
 cesta.push("naranja", "piña")
@@ -24,10 +24,8 @@ var cestaVacia = [] //arrive vacio */
 
 document.querySelector('#header').innerHTML = "estoy leyendo el documento arrive";
 
-var cesta = ["Fresa", "Pera", "Cereza"] //crea el arrive
-
-
-var opti = prompt("1.Ver elemento de la cesta\n2.Agregar fruta a la cesta\n3.Quitar una fruta en la cesta\n4.Cerrar menu")
+var cesta = [] //crea el arrive
+var inicio = true
 
 function See() {
     console.log(cesta)
@@ -36,26 +34,37 @@ function See() {
 function Add() {
     var agregar = prompt("Agregue una nueva fruta")
     cesta.push(agregar)
-    console.log (cesta)
+    console.log(cesta)
 }
 
 function Del() {
-
+    cesta.pop()
+    console.log(cesta)
 }
 
 do {
+    var opti = prompt("1.Ver elemento de la cesta\n2.Agregar fruta a la cesta\n3.Quitar una fruta en la cesta\n4.borrar fruta especifica\n5.Cerrar menu")
+    switch(parseInt(opti)) {
 
-    if (opti == 1) {
-        See()
+        case 1:
+            See()
+            break
+
+        case 2:
+            Add()
+            break
+
+        case 3:
+            Del()
+            break
+
+        case 4:
+            Del2()
+            break
+        case 5:
+            inicio = false
+            break
     }
 
-    if (opti == 2) {
-        Add()
-    }
 
-    if (opti == 3) {
-        Del()
-    }
-
-
-} while (cesta == true)
+} while (inicio == true)
