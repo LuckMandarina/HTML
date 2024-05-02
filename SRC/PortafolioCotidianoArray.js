@@ -22,45 +22,44 @@ console.log(cesta[2])
 
 var cestaVacia = [] //arrive vacio */
 
-document.querySelector('#header').innerHTML = "estoy leyendo el documento arrive";
+document.querySelector('#header').innerHTML = "estoy leyendo el PORTAFOLIO";
 
 var cesta = [] //crea el arrive
 var inicio = true
 
-function See() {
-    console.log(cesta)
-}
 
-function Add() {
+function Add() { 
     var agregar = prompt("Agregue una nueva fruta")
     cesta.push(agregar)
     console.log(cesta)
 }
 
+function Modificar() {
+    var modd = prompt("Tarea que reemplazara la actual")
+    var numero = prompt("Numero de la tarea que desea reemplazar")
+    cesta[numero] = modd
+}
+
 function Del() {
-    cesta.pop()
+    var borrar = prompt("Ingrese a partir de que numero desea borrar (desde el 0)")
+    var borrar2 = prompt("Ingrese la cantidad de tareas que desee borrar")
+    cesta.splice(borrar, borrar2)
+}
+
+function See() {
     console.log(cesta)
 }
 
-function Del2(){
-    var ind = prompt ("Dijiste la fruta que desea borrar")
-
-    while(ind<=cesta.length) {
-       cesta.splice(ind, cesta.length)
-       console.log(cesta)
-    }
-}
-
 do {
-    var opti = prompt("1.Ver elemento de la cesta\n2.Agregar fruta a la cesta\n3.Quitar una fruta en la cesta\n4.borrar fruta especifica\n5.Cerrar menu")
+    var opti = prompt("1.Agregar tarea\n2.Modificar tarea\n3.Eliminar tarea\n4.Ver tareas\n5.Salir del menu")
     switch(parseInt(opti)) {
 
         case 1:
-            See()
+            Add()
             break
 
         case 2:
-            Add()
+            Modificar()
             break
 
         case 3:
@@ -68,7 +67,7 @@ do {
             break
 
         case 4:
-            Del2()
+            See()
             break
         case 5:
             inicio = false
