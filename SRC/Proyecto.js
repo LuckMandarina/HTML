@@ -24,7 +24,6 @@ function promedio() {
     suma += arreglo[i]
    }
    let respuesta = suma/arreglo.length
-   console.log("el promedio del arreglo es: ", respuesta)
    return respuesta
 }
 
@@ -38,11 +37,11 @@ function SumaValor() {
 }
 
 function MayorAlPromedio() {
-    let promedio = promedio()
+    let promedio2 = promedio()
     let cantidad = 0;
 
     for(i=0; i<arreglo.length; i++) {
-        if(promedio < arreglo[i]) {
+        if(promedio2 < arreglo[i]) {
             cantidad++
         }
     }
@@ -115,21 +114,25 @@ function PosicionElemento(valorNumero) {
             i = arreglo.length
         }
     }
-    console.log(arreglo[i])
+    if(encontrarN) {
+        return Posicion
+    } else {
+        return -1
+    }
 
 }
 
 function InvertirArreglo() {
-    let invertido = []
-    invertido.length = arreglo.length
-    let posicioninvertida = 0
+    let arreglo2 = []
+    arreglo2.length = arreglo.length
+    let posicion1 = 0
 
-    for (let i=0; i<arreglo.length; i++) {
-        invertido[posicioninvertida] = arreglo[i]
-        posicioninvertida++;
+    for(let i=0; i<arreglo.length; i++) {
+        arreglo2[posicion1] = arreglo[i];
+        posicion1++
     }
-    arreglo = invertido
-    console.log(invertido)
+  arreglo = arreglo2
+  console.log(arreglo2.reverse())
 }
 
 
@@ -144,7 +147,7 @@ do {
         break
 
         case 2:
-            promedio()
+            console.log ("el promedio es:", promedio(arreglo))
         break
 
         case 3: 
@@ -152,7 +155,7 @@ do {
         break
         
         case 4: 
-            MayorAlPromedio()
+           console.log("los numeros mayores al promedio son: ", MayorAlPromedio())
         break
 
         case 5: 
@@ -176,7 +179,14 @@ do {
         break
 
         case 10:
-           PosicionElemento()
+           let uno = parseInt(prompt("Que numero desea buscar en el arreglo?"))
+           console.log(PosicionElemento(uno))
+   
+        break
+
+        case 11:
+            InvertirArreglo()
+            console.log ("el arreglo fue invertido")
         break
     
 

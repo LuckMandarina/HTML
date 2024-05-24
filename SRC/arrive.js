@@ -20,7 +20,7 @@ El segundo parametro(1) indica cuantos numeros seran removidos
 apartir del primper parametro(2)
 console.log(cesta[2])
 
-var cestaVacia = [] //arrive vacio */
+var cestaVacia = [] //arrive vacio
 
 document.querySelector('#header').innerHTML = "estoy leyendo el documento arrive";
 
@@ -76,4 +76,19 @@ do {
     }
 
 
-} while (inicio == true)
+} while (inicio == true) */
+
+// PRUEBAS
+function InvertirArreglo(datos) {
+    if (!Array.isArray(datos)) {
+        throw TypeError ('El argumento debe ser un arreglo')
+    }
+   
+    return datos.reverse();
+}
+console.log(arreglo);
+
+console.log();
+
+let resultado = InvertirArreglo(arreglo)
+console.log(resultado)
